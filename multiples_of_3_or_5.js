@@ -26,12 +26,15 @@ function calc_sum(limit, multiple) {
 	return multiple * (sum_limit * (sum_limit + 1) / 2);
 }
 
+/** 
+* Substract multiples_of_15 to the sum of 3 and 5 multiples.
+* multiples of 3 = {3, 6, 9, 12, 15, ...}
+* multiples of 5 = {5, 10, 15, ...}
+* the substract produce a inner join of the both sets, no repeat values
+* {3, 5, 6, 9, 10, 12, 15, 15, ...}
+*/
 function calc_multiple_sum(limit) {
-	return calc_sum(limit, 3) + calc_sum(limit, 5)
+	return calc_sum(limit, 3) + calc_sum(limit, 5) - calc_sum(limit, 15);
 }
 
-console.log('10 => ', calc_multiple_sum(10));
-console.log('100 => ', calc_multiple_sum(100));
 console.log('1000 => ', calc_multiple_sum(1000));
-console.log('10000 => ', calc_multiple_sum(10000));
-console.log('100000 => ', calc_multiple_sum(100000));
