@@ -31,7 +31,7 @@ function calc_sum(limit, multiple) {
 * multiples of 3 = {3, 6, 9, 12, 15, ...}
 * multiples of 5 = {5, 10, 15, ...}
 * the substract produce a inner join of the both sets, no repeat values
-* {3, 5, 6, 9, 10, 12, 15, 15, ...}
+* {3, 5, 6, 9, 10, 12, 15, ...}
 */
 function calc_multiple_sum(limit) {
 	return calc_sum(limit, 3) + calc_sum(limit, 5) - calc_sum(limit, 15);
