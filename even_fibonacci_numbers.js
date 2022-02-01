@@ -31,7 +31,7 @@ function fibonacci(n) {
 }
 
 /**
- * Every 3 numbers, the fibonacci value is even (3=2, 6=8, 9=34, ...)
+ * Every 3 numbers, the fibonacci value is even (fib(3)=2, fib(6)=8, fib(9)=34, ...)
  */
 function calculate_sum(limit) {
 	let sum = 0;
