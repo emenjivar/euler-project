@@ -42,10 +42,10 @@ function generate_factors(n) {
     let current_index = 0;
     let list_factors = [];
     let list_primes = generate_pseudo_primes(n);
+    let total_primes = list_primes.length;
     let current_prime = 0;
 
-    while(n > 1) {
-
+    do {
         current_prime = list_primes[current_index];
 
         if(n % current_prime == 0) {
@@ -56,6 +56,11 @@ function generate_factors(n) {
         }
 
         current_index++
+    } while(n > 1 && current_index <= total_primes);
+
+    // In case of n prime
+    if (list_factors.length == 0) {
+        list_factors.push(n);
     }
 
     return list_factors;
