@@ -56,10 +56,17 @@ function generate_factors(n) {
         }
 
         current_index++
-    } while(n > 1 && current_index <= total_primes);
+    // Second condition avoid index out of bounds
+    } while(n > 1 && current_index + 1 < total_primes);
 
-    // In case of n prime
-    if (list_factors.length == 0) {
+    /**
+     * If the result of the factoring with all the primes
+     * between 2 and sqrt(n) is more than 1, 
+     * we can say that 2 is the last prime factor.
+     * 
+     * Also, is there are no factors then n is a prime itself
+     */
+    if (n > 1 || list_factors.length == 0) {
         list_factors.push(n);
     }
 
