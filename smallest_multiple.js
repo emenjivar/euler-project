@@ -105,9 +105,13 @@ function generate_factors(n) {
     return output;
 }
 
+
+/**
+ * Factorize every number between 2 and n,
+ * generating an array following the {base, power} structure
+ */
 function group_factors(n) {
     let list_factors = [];
-
     for(let i=2; i<=n; i++) {
         let factors = generate_factors(i);
         let powers = group_powers(factors);
@@ -117,14 +121,12 @@ function group_factors(n) {
             list_factors.push(powers[j]);
         }
     }
-
     return list_factors;
 }
 
 /**
- * Group the array by the base (1st element of the sub-array),
- * getting the greater power (2nd element of the sub-array)
- * [[2,1], [3, 3], [2, 2], [3,2], [2,1]] => [[2,2], [3,2]]
+ * Extracting the greatest powers of 
+ * the factorizing numbers from 1 to n
  */
 function get_greater_power_values(n) {
     let output = new Map();
